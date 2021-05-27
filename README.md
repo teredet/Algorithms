@@ -3,6 +3,9 @@ All my algorithms
 ```bash
 Algorithms
 │
+├───Encryption algorithms
+│   └───CaesarCipher.py
+│
 ├───Searchng algorithms
 │   ├───binary_search.py
 │   ├───exponential_search.py
@@ -16,4 +19,5 @@ Algorithms
 │   └───selection_sort.py
 │
 └StringReverseAlgorithm.py
+
 ```
