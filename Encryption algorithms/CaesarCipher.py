@@ -1,4 +1,4 @@
-alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
+alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 while True:
     print('Enter E to encrypt the message, D to decrypt and EXIT to exit')
