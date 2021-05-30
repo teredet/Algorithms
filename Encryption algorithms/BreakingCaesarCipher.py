@@ -1,5 +1,7 @@
 alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
+#Frequency analysis
+
 count = {}
 encrypted_string = input('>>> ').upper()
 
