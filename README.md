@@ -5,7 +5,8 @@ Algorithms
 │
 ├───Encryption algorithms
 │   ├───BreakingCaesarCipher.py
-│   └───CaesarCipher.py
+│   ├───CaesarCipher.py
+│   └───VigenereCipher.py
 │
 ├───Searchng algorithms
 │   ├───binary_search.py
