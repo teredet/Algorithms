@@ -1,5 +1,3 @@
-
-
 def FrequencyAnalysis():
     #Frequency analysis
 
