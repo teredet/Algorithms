@@ -7,7 +7,8 @@ Algorithms
 │   ├───BreakingCaesarCipher.py
 │   ├───CaesarCipher.py
 │   ├───VigenereCipher.py
-│   └───SubstitutionСipher.py
+│   ├───SubstitutionСipher.py
+│   └───HomophonicSubstitutionCipher.py
 │
 ├───Searchng algorithms
 │   ├───binary_search.py
