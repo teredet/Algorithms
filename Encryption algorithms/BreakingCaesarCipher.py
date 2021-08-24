@@ -1,10 +1,13 @@
-def FrequencyAnalysis():
-    #Frequency analysis
+def FrequencyAnalysis(encrypted_string):
+    '''
+    encrypted_string - encrypted string
+    This method relies on the fact that the letter "e" is most often found in texts in English.\n
+    If you use small text, the method may give a false answer. And I recommend using Brute Force in such cases.
+    '''
 
     #alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     count = {}
-    encrypted_string = input('>>> ').upper()
 
     for s in encrypted_string:
         if s in alphabet:
@@ -33,15 +36,18 @@ def FrequencyAnalysis():
     print(decrypted_string)
 
 
-def BruteForce():
+def BruteForce(encrypted_string):
+    '''
+    encrypted_string - encrypted string
+    The easiest and most versatile way to break the Caesar cipher. \n
+    Returns all possible decryptions for the given string.
+    '''
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
     def change_arrey():
         for i in range(number):
             arrey.append(arrey[0])
             arrey.remove(arrey[0])
-
-    encrypted_string = input('>>> ').upper()
     
     print("""
     All posible variants of decoding: 
@@ -60,18 +66,22 @@ def BruteForce():
                         decrypted_string += alphabet[j]
         print(f"[{str(number)}] {str(decrypted_string)}")
 
-while True:
-    print("""
-        If you want use FrequencyAnalysis: 'FA'
-        If you want use BruteForce: input 'BF'
-    """)
-    method_type = input()
 
-    if method_type == 'FA':
-        FrequencyAnalysis()
-        break
-    elif method_type == 'BF':
-        BruteForce()
-        break
-    else:
-        print('Invalid input')
+if __name__ == "__main__":
+    while True:
+        encrypted_string = input('>>> ').upper()
+
+        print("""
+            If you want use FrequencyAnalysis: 'FA'
+            If you want use BruteForce: input 'BF'
+        """)
+        method_type = input()
+
+        if method_type == 'FA':
+            FrequencyAnalysis(encrypted_string)
+            break
+        elif method_type == 'BF':
+            BruteForce(encrypted_string)
+            break
+        else:
+            print('Invalid input')
