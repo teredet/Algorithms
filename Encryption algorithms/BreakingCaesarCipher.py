@@ -33,25 +33,22 @@ def FrequencyAnalysis(encrypted_string):
             decrypted_string += alphabet[alphabet.index(s)-key]
         else:
             decrypted_string += s
-    print(decrypted_string)
+    return decrypted_string
 
 
 def BruteForce(encrypted_string):
     '''
     encrypted_string - encrypted string
     The easiest and most versatile way to break the Caesar cipher. \n
-    Returns all possible decryptions for the given string.
+    Returns dictionary with number as key and possible decryptions for the given string as value.
     '''
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-
+    res = dict()
+    
     def change_arrey():
         for i in range(number):
             arrey.append(arrey[0])
             arrey.remove(arrey[0])
-    
-    print("""
-    All posible variants of decoding: 
-    """)
 
     for number in range(len(alphabet)):
         arrey = list(map(lambda x:x,alphabet))
@@ -64,24 +61,27 @@ def BruteForce(encrypted_string):
                 for j in range(len(alphabet)):
                     if i == arrey[j]:
                         decrypted_string += alphabet[j]
-        print(f"[{str(number)}] {str(decrypted_string)}")
+        res[str(number)] = str(decrypted_string)
+        # return f"[{str(number)}] {str(decrypted_string)}"
+    return res
 
 
 if __name__ == "__main__":
     while True:
-        encrypted_string = input('>>> ').upper()
+        encrypted_string = input('Enter the string: ').upper()
 
         print("""
             If you want use FrequencyAnalysis: 'FA'
             If you want use BruteForce: input 'BF'
         """)
-        method_type = input()
+        method_type = input('>>> ').upper()
 
         if method_type == 'FA':
-            FrequencyAnalysis(encrypted_string)
+            print(FrequencyAnalysis(encrypted_string))
             break
         elif method_type == 'BF':
-            BruteForce(encrypted_string)
+            for key, value in BruteForce(encrypted_string).items():
+                print(f'[{key}] {value}')
             break
         else:
             print('Invalid input')
