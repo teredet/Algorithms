@@ -1,17 +1,34 @@
-cryptMode = input("[E]ncrypt|[D]ecrypt: ").upper()
-if cryptMode not in ['E','D']:
-	print("Error: mode is not Found!"); raise SystemExit
-startMessage = input("Write the message: ").upper()
-oneKey = input("Write the key: ").upper()
-
 def encryptDecrypt(mode, message, key):
+	'''
+    mode - 'E' if you want to encrypt and 'D' if you want to decrypt\n
+    message - the string to encode or decore\n
+    key - codeword\n
+    \n
+    The function encodes or decodes the message.\n
+    Returns a string.\n
+	
+	'''
 	key *= len(message) // len(key) + 1  
 	finalMessage = ""
 	for i, j in enumerate(message):
-		if mode in ['E','e']:
+		if mode == 'E':
 			temp = ord(j) + ord(key[i])
 		else:
 			temp = ord(j) - ord(key[i])
 		finalMessage += chr(temp % 26 + ord('A'))
 	return finalMessage
-print("Final message:",encryptDecrypt(cryptMode, startMessage, oneKey))
+
+
+if __name__ == "__main__":
+    while True:
+        print('Enter E to encrypt the message, D to decrypt and EXIT to exit')
+        cryptMode = input('>>> ').upper()
+
+        if cryptMode == 'EXIT':
+            break
+        elif cryptMode in ['E','D']:
+            message = input('Enter the string: ').upper()
+            key = input('Enter key: ').upper()
+            print("Final message: ",encryptDecrypt(cryptMode, message, key))
+        else:
+            continue
