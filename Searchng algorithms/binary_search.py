@@ -1,4 +1,8 @@
 def binary_search(lys, val):
+    '''
+    lys - list in which to search
+    val - value to find
+    '''
     first = 0
     last = len(lys)-1
     index = -1
@@ -13,5 +17,5 @@ def binary_search(lys, val):
                 first = mid +1
     return index
 
-# test
-print(binary_search([1,2,3,4,5,2,1], 2))
+if __name__ == "__main__":
+    print(binary_search([1,2,3,4,5,2,1], 2))
