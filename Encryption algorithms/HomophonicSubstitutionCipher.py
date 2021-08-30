@@ -1,6 +1,6 @@
 from random import choice
 
-def HomophonicSubstitutionCipher(mode, message):
+def homophonic_substitution_cipher(mode, message):
 	'''
 	mode - 'E' if you want to encrypt and 'D' if you want to decrypt\n
 	message - the string to encode or decore\n
@@ -59,6 +59,6 @@ if __name__ == "__main__":
 		elif mode in ['E','D']:
 			message = input('Enter the string: ')
 
-			print("Final message: ",HomophonicSubstitutionCipher(mode, message))
+			print("Final message: ",homophonic_substitution_cipher(mode, message))
 		else:
 			continue

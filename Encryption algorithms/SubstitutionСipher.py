@@ -1,4 +1,4 @@
-def SubstitutionСipher(message, keys):
+def substitution_cipher(message, keys):
     '''
     message - the string to encode or decore\n
     keys - Dictionary with character ratios. When encoding: sign - key. When decoded: key - sign.\n
@@ -33,9 +33,9 @@ if __name__ == "__main__":
 
             if cryptMode == 'E':
                 keys = dict(zip(symbolsAlpha,symbolsCrypt))
-                print(f"Encrypted text: {SubstitutionСipher(message, keys)}")
+                print(f"Encrypted text: {substitution_cipher(message, keys)}")
             elif cryptMode == 'D':
                 keys = dict(zip(symbolsCrypt, symbolsAlpha))
-                print(f"Decrypted text: {SubstitutionСipher(message, keys)}")
+                print(f"Decrypted text: {substitution_cipher(message, keys)}")
         else:
             continue

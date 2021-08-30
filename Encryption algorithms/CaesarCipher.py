@@ -1,4 +1,4 @@
-def CaesarCiplet(menu, message, key):
+def сaesar_сiplet(menu, message, key):
     '''
     menu - 'E' if you want to encrypt and 'D' if you want to decrypt\n
     message - the string to encode or decore\n
@@ -34,6 +34,6 @@ if __name__ == "__main__":
         elif menu == 'E' or menu == 'D':
             message = input('Enter the string: ').upper()
             key = int(input('Enter key: '))
-            print('Result: ' + CaesarCiplet(menu, message, key))
+            print('Result: ' + сaesar_сiplet(menu, message, key))
         else:
             continue

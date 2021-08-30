@@ -1,4 +1,4 @@
-def encryptDecrypt(mode, message, key):
+def vigenere_cipher(mode, message, key):
 	'''
     mode - 'E' if you want to encrypt and 'D' if you want to decrypt\n
     message - the string to encode or decore\n
@@ -29,6 +29,6 @@ if __name__ == "__main__":
         elif cryptMode in ['E','D']:
             message = input('Enter the string: ').upper()
             key = input('Enter key: ').upper()
-            print("Final message: ",encryptDecrypt(cryptMode, message, key))
+            print("Final message: ",vigenere_cipher(cryptMode, message, key))
         else:
             continue

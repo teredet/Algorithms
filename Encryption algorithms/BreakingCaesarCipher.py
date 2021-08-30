@@ -1,4 +1,4 @@
-def FrequencyAnalysis(encrypted_string):
+def frequency_analysis(encrypted_string):
     '''
     encrypted_string - encrypted string
     This method relies on the fact that the letter "e" is most often found in texts in English.\n
@@ -36,7 +36,7 @@ def FrequencyAnalysis(encrypted_string):
     return decrypted_string
 
 
-def BruteForce(encrypted_string):
+def brute_force(encrypted_string):
     '''
     encrypted_string - encrypted string
     The easiest and most versatile way to break the Caesar cipher. \n
@@ -77,10 +77,10 @@ if __name__ == "__main__":
         method_type = input('>>> ').upper()
 
         if method_type == 'FA':
-            print(FrequencyAnalysis(encrypted_string))
+            print(frequency_analysis(encrypted_string))
             break
         elif method_type == 'BF':
-            for key, value in BruteForce(encrypted_string).items():
+            for key, value in brute_force(encrypted_string).items():
                 print(f'[{key}] {value}')
             break
         else:
