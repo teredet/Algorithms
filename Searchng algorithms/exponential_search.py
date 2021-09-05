@@ -1,4 +1,8 @@
 def binary_search(lys, val):
+    '''
+    lys - list in which to search
+    val - value to find
+    '''
     first = 0
     last = len(lys)-1
     index = -1
@@ -14,6 +18,10 @@ def binary_search(lys, val):
     return index
 
 def exponential_search(lys, val):
+    '''
+    lys - list in which to search
+    val - value to find
+    '''
     if lys[0] == val:
         return 0
     index = 1
@@ -21,5 +29,6 @@ def exponential_search(lys, val):
         index = index * 2
     return binary_search( lys[:min(index, len(lys))], val)
 
-# test
-print(exponential_search([1,2,3,4,5,2,1], 2))
+
+if __name__ == "__main__":
+    print(exponential_search([1,2,3,4,5,2,1], 2))
