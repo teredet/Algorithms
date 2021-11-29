@@ -8,10 +8,20 @@ def сaesar_сiplet(menu, message, key):
     Returns a string.\n
     
     '''
-    
-    alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    alphabetENG = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    alphabetRU = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'
 
+    message = message.upper()
+    key = int(key)
     output = ''
+    
+    if message[0] in alphabetENG:
+        alphabet = alphabetENG
+    elif message[0] in alphabetRU:
+        alphabet = alphabetRU
+    else:
+        return 'Invalid message'
+
     if menu == 'D':
         key *= -1
     for letter in message:
